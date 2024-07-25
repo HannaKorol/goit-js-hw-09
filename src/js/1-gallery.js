@@ -1,8 +1,7 @@
 // Описаний в документації
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
-
 
 const images = [
     {
@@ -78,7 +77,7 @@ function createGalleryImgs(images){
       ({preview, original, description }) => 
     `<li class="gallery-item">
     <a class="gallery-link" href="${original}">
-    <img class="gallery-image" src="${preview}" data-source="${original}" alt="${description}" width="360"
+    <img class="gallery-image" src="${preview}" alt="${description}" width="360"
           height="200"/>
     </a> 
     </li>`
@@ -93,7 +92,7 @@ const galleryList = document.querySelector(".gallery");
 galleryList.insertAdjacentHTML("beforeend", createGalleryImgs(images)); 
 
 
-const lightbox = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a',{
     captionsData: 'alt',
     captionDelay: 250,
 });

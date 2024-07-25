@@ -27,6 +27,7 @@ if (savedData) {     // Перевірка наявності збережени
         console.error("Error parsing localStorage data:", error);
     }
 }
+
 inputEl.value = parsedData.email || '';
 textarea.value = parsedData.message || '';     
 
