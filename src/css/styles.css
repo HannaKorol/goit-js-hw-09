@@ -67,7 +67,7 @@ button:hover {
 
 /* Стилізування галереї з картинками */
 
-ul {
+/* ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -96,4 +96,41 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   cursor: pointer;
+} */
+
+
+
+
+
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
+
+.gallery {
+  max-width: 1128px;
+  max-height: 648px;
+  display: flex;
+  flex-wrap: wrap; /* Дозволяє елементам переноситися на новий рядок */
+  justify-content: space-around; /* Вирівнювання елементів по горизонталі */
+  align-items: center; 
+  gap: 24px; /* Проміжок між елементами */
+  list-style-type: none; /* Видалити маркери списку */
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  };
+  
+  .gallery li img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* Збереження пропорцій зображення */
+  transition: transform 0.3s ease; /* Додає плавний перехід для трансформації */
+  };
+
+  .gallery li img:hover {
+    transform: scale(1.2); /* Збільшує зображення на 20% */
+    }
