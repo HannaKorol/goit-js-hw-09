@@ -26,8 +26,8 @@ form.addEventListener("submit", submitForm);
 
 // 7. (2.1) Зберігай актуальні дані з полів email та message у formData та записуй цей об’єкт у локальне сховище. Використовуй ключ "feedback-form-state" для зберігання даних у сховищі.
 function handleInput(event) {
-    formData.email = inputEl.value.trim();
-    formData.message = textarea.value.trim();
+    formData.email = inputEl.value.trim(); //зберігання данних до formData.email
+    formData.message = textarea.value.trim(); // зберігання данних до formData.message
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData)); // зберігання даних у сховище
 }
 
@@ -45,11 +45,16 @@ if (savedData) {     // Перевірка наявності збережени
     }
 }
 
+formData.email = inputEl.value; // Зберігає поточне значення поля email у об'єкт formData
+formData.message = textarea.value; // Зберігає поточне значення поля message у об'єкт formData
+
 inputEl.value = parsedData.email || ''; // Заповнення поля email збереженим значенням або залишенням порожнім, якщо значення немає
 textarea.value = parsedData.message || '';  // Заповнення поля message збереженим значенням або залишенням порожнім, якщо значення немає   
 
-formData.email = inputEl.value; // Зберігає поточне значення поля email у об'єкт formData
-formData.message = textarea.value; // Зберігає поточне значення поля message у об'єкт formData
+// 8. (2.2) Зберігай актуальні дані з полів email та message у formData та записуй цей об’єкт у локальне сховище. Використовуй ключ "feedback-form-state" для зберігання даних у сховищі.
+function submitForm(event) {
+    event.preventDefault();
+
 
     // 9. (4.) Перед відправленням форми переконайся, що обидва поля форми заповнені. Якщо будь-яке з полів (властивостей об’єкта formData) порожнє, показуй сповіщення з текстом «Fill please all fields». 
     if (!inputEl.value || !textarea.value) {
