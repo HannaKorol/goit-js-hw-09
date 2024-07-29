@@ -96,5 +96,5 @@ ul {
   }
 
   .gallery li img:hover {
-    transform: scale(1.1); /* Збільшує зображення на 10% */
+    transform: scale(1.05); /* Збільшує зображення на 5% */
     }
