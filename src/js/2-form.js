@@ -15,8 +15,21 @@ const formData = {
     message: '',
 };
 
-// 4. (2.2) Повернення данних з локального сховища збереженим за ключем.
-const savedData = localStorage.getItem(STORAGE_KEY); 
+
+function loadSavedData() {
+    const savedData = localStorage.getItem(STORAGE_KEY);
+    if (savedData) {
+        const parsedData = JSON.parse(savedData);
+        formData.email = parsedData.email || '';
+        formData.message = parsedData.message || '';
+        inputEl.value = formData.email;
+        textarea.value = formData.message;
+    }
+}
+
+
+/* // 4. (2.2) Повернення данних з локального сховища збереженим за ключем.
+const savedData = localStorage.getItem(STORAGE_KEY);  */
 
 
 // 6. (2.) Використовуй метод делегування для відстеження змін у формі через подію input.
@@ -34,8 +47,9 @@ function handleInput(event) {
 // 8. (2.2) Зберігай актуальні дані з полів email та message у formData та записуй цей об’єкт у локальне сховище. Використовуй ключ "feedback-form-state" для зберігання даних у сховищі.
 function submitForm(event) {
     event.preventDefault();
+}
 
-// 5. (3.) При завантаженні сторінки перевір, чи є дані у локальному сховищі. Якщо так, використовуй їх для заповнення форми та об'єкта formData. Якщо ні, залиш поля форми порожніми.
+/* // 5. (3.) При завантаженні сторінки перевір, чи є дані у локальному сховищі. Якщо так, використовуй їх для заповнення форми та об'єкта formData. Якщо ні, залиш поля форми порожніми.
 let parsedData = {}; // Створюється порожній об'єкт parsedData. Він буде використовуватися для зберігання розпарсованих даних з localStorage.
 if (savedData) {     // Перевірка наявності збережених даних у localStorage
     try {                                   // Використовується try...catch блок для спроби розпарсити збережені дані за допомогою JSON.parse(). Якщо дані є валідним JSON, вони будуть перетворені в об'єкт JavaScript і збережені в змінну parsedData.
@@ -50,6 +64,25 @@ formData.message = textarea.value; // Зберігає поточне значе
 
 inputEl.value = parsedData.email || ''; // Заповнення поля email збереженим значенням або залишенням порожнім, якщо значення немає
 textarea.value = parsedData.message || '';  // Заповнення поля message збереженим значенням або залишенням порожнім, якщо значення немає   
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 8. (2.2) Зберігай актуальні дані з полів email та message у formData та записуй цей об’єкт у локальне сховище. Використовуй ключ "feedback-form-state" для зберігання даних у сховищі.
 function submitForm(event) {
