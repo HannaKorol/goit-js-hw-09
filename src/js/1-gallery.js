@@ -92,7 +92,10 @@ const galleryList = document.querySelector(".gallery");
 galleryList.insertAdjacentHTML("beforeend", createGalleryImgs(images)); 
 
 
+// Створюємо новий екземпляр SimpleLightbox, прикріплюючи його до всіх <a> елементів всередині .gallery
 const lightbox = new SimpleLightbox('.gallery a',{
-    captionsData: 'alt',
-    captionDelay: 250,
+// Вказуємо, що підписи до зображень повинні братися з атрибуту alt зображення
+    captionsData: 'alt',   
+// Встановлюємо затримку 250 мілісекунд перед показом підпису                          
+    captionDelay: 250,                               
 });
